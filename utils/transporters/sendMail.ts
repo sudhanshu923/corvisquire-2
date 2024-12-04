@@ -1,6 +1,6 @@
 import sgMail from "@sendgrid/mail"
 
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY || "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"
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY as string
 
 sgMail.setApiKey(SENDGRID_API_KEY);
 

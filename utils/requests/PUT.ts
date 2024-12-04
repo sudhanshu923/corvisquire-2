@@ -1,7 +1,7 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 
-axios.defaults.baseURL = process.env.DOMAIN || "http://localhost:3000";
+axios.defaults.baseURL = process.env.DOMAIN
 
 interface PutOptions {
     headers?: Record<string, string>;

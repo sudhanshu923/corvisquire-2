@@ -6,7 +6,7 @@ import { Users } from "@/models/userModel";
 
 import { sendMail } from "@/utils/transporters/sendMail";
 
-const DOMAIN = process.env.DOMAIN || "http://localhost:3000/";
+const DOMAIN = process.env.DOMAIN
 
 export async function POST(request: Request) {
 

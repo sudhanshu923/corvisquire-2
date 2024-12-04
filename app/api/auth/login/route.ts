@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 import { dbConnect } from "@/connections/dbConnect";
 import { Users } from "@/models/userModel";
 
-const JWT_SECRET = process.env.JWT_SECRET || "GGfUN0CI54ggLtl67xQaBhJMEHcjRRrjrhK4fRjpwnI";
+const JWT_SECRET = process.env.JWT_SECRET as string
 
 export async function POST(request: Request) {
 
