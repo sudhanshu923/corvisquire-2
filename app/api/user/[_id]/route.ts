@@ -5,11 +5,11 @@ import mongoose from "mongoose";
 import { dbConnect } from "@/connections/dbConnect";
 import { Users } from "@/models/userModel";
 
-export async function GET(request: Request, { params }: { params: { _id: string } }) {
+export async function GET(request: Request, { params }: { params: Promise<{ _id: string }> }) {
 
     try {
 
-        const { _id } = params;
+        const { _id } = await params;
 
         if (!_id) {
             return NextResponse.json(
@@ -26,7 +26,7 @@ export async function GET(request: Request, { params }: { params: { _id: string 
         }
 
         await dbConnect()
-
+        
         const user = await Users.findById(_id);
         if (!user) {
             return NextResponse.json(

@@ -7,7 +7,7 @@ import { Users } from "@/models/userModel";
 
 const JWT_SECRET = process.env.JWT_SECRET as string
 
-export function verifyToken(token: string): JwtPayload | NextResponse {
+function verifyToken(token: string): JwtPayload | NextResponse {
 
     try {
 
